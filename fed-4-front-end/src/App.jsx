@@ -7,7 +7,7 @@ function App() {
     <>
       <Navigation />
       <main>
-        <HeroSection />
+       <HeroSection />
       </main>
       <SolarEnergyProduction />
     </>

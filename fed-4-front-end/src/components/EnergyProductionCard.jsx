@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const EnergyCardProduction = (props) => {
+const EnergyProductionCard = (props) => {
   //   const day = "Mon";
   //   const date = "Aug 18";
   //   const production = 34.1;
@@ -25,33 +25,31 @@ const EnergyCardProduction = (props) => {
   // }
 
   //Local Variable
-//   let isSelected = false;
+  //   let isSelected = false;
 
-//State Variable
-const[isSelected,setIsSelected] = useState(false);
+  //State Variable
+  const [isSelected, setIsSelected] = useState(false);
 
+  //   const handleClick = (e) => {
+  //     isSelected = !isSelected;
+  //     console.log(e.target);
+  //     console.log(`${props.day} was clicked`);
+  //   };
 
-//   const handleClick = (e) => {
-//     isSelected = !isSelected;
-//     console.log(e.target);
-//     console.log(`${props.day} was clicked`);
-//   };
-
-
-const handleClick = () => {
+  const handleClick = () => {
     setIsSelected(!isSelected);
-}
+  };
 
   return (
     <button
       className={`block cursor-pointer ${
         isSelected ? "outline-2 outline-offset-2 outline-blue-600" : ""
       } relative border ${
-        props.hasAnomally ? "border-red-500" : "border-gray-200"
-      } rounded-lg bg-white text-gray-950 text-center`}
+        props.hasAnomaly ? "border-red-500" : "border-gray-200"
+      } rounded-lg bg-white text-gray-950 text-center overflow-hidden`}
       onClick={handleClick}
     >
-      {props.hasAnomally && (
+      {props.hasAnomaly && (
         <div className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 text-sm rounded-bl-lg">
           Anomaly
         </div>
@@ -65,7 +63,7 @@ const handleClick = () => {
       <div className="p-6 pt-2 flex flex-col items-center">
         <span
           className={`block mb-1 text-3xl font bold ${
-            props.hasAnomally ? "text-red-600" : "text-blue-600"
+            props.hasAnomaly ? "text-red-600" : "text-blue-600"
           }`}
         >
           {props.production}
@@ -76,4 +74,4 @@ const handleClick = () => {
   );
 };
 
-export default EnergyCardProduction;
+export default EnergyProductionCard;
