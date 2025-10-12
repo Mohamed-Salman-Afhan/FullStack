@@ -11,9 +11,9 @@ server.use(express.json());
 server.use("/api/solar-units", solarUnitRouter);
 
 //test root endpoint
-server.get("/api", (req, res) => {
-  res.status(200).json({ message: "Hello from the backend!" });
-});
+// server.get("/api", (req, res) => {
+//   res.status(200).json({ message: "Hello from the backend!" });
+// });
 
 const PORT = 3000;
 server.listen(PORT, () => {

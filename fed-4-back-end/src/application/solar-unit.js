@@ -36,7 +36,7 @@ if (!solarUnit) {
 res.status(200).json(solarUnit);
 };
 
-export const updateSolarUnit = async (req, res) => {
+export const updateSolarUnitById = async (req, res) => {
 
     const { id } = req.params;
     const { userId, serialNumber, installationDate, capacity, status } = req.body;
@@ -55,11 +55,11 @@ export const updateSolarUnit = async (req, res) => {
     res.status(200).json(solarUnit);
 }
 
-export const deleteSolarUnit = async (req, res) => {
+export const deleteSolarUnitById = async (req, res) => {
     const { id } = req.params;
     const index = solarUnits.findIndex(unit => unit._id === id);    
 
-    if(index === -1) {
+    if (index === -1) {
         return res.status(404).json({ message: "Solar unit not found" });
     }
 

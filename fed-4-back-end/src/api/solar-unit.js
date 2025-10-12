@@ -1,5 +1,5 @@
 import express from 'express';
-import { createSolarUnit, getAllSolarUnits, getSolarUnitById } from '../application/solar-unit.js';
+import { createSolarUnit, getAllSolarUnits, getSolarUnitById, updateSolarUnitById, deleteSolarUnitById } from '../application/solar-unit.js';
 
 const solarUnitRouter = express.Router();
 
@@ -9,8 +9,8 @@ solarUnitRouter.route('/')
 
 
   solarUnitRouter.route('/:id')
-  .get(getSolarUnitById);
-//   .put()
-//   .delete();
+  .get(getSolarUnitById)
+  .put(updateSolarUnitById)
+  .delete(deleteSolarUnitById);
 
 export default solarUnitRouter;
